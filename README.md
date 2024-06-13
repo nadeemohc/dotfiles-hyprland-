@@ -4,7 +4,7 @@
 
 ```
 git clone https://github.com/jemhv/hypr-dune.git
-cp -r hypr-dune/{theme-name}/* ~/.config/
+<!--- cp -r hypr-dune/{theme-name}/* ~/.config/ -->
 
 ```
 
@@ -31,17 +31,22 @@ mainMod + Shift + Print =         takes regional screen shot
 
 # Screenshots
 
-> Hyprpaper:
+#### Hyprpaper:
+
 > ![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/main/assets/hyprpaper.png)
 
-Window Tabs:
+#### Window Tabs:
+
 ![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/main/assets/main.png)
 
-Rofi:
+#### Rofi:
+
 ![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/main/assets/rofi.png)
 
-Wlogout:
+#### Wlogout:
+
 ![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/main/assets/wlogout.png)
 
-Sleep/Suspend:
+#### Sleep/Suspend:
+
 ![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/main/assets/lock.png)
