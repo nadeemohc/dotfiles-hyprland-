@@ -3,9 +3,8 @@
 > Installation
 
 ```
-git clone https://github.com/jemhv/hypr-dune.git
-<!--- cp -r hypr-dune/{theme-name}/* ~/.config/ -->
-
+git clone https://github.com/nadeemohc/dotfiles-hyprland-.git
+cp -r dotfiles-hyprland/* ~/.config/
 ```
 
 #### Please keep the following dependencies installed :3
