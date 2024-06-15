@@ -23,8 +23,8 @@ mainMod + B =                     opens firefox
 mainMod + L =                     locks the screen (uses Hyprlock)
 mainMod + K =                     kills the current window
 mainMod + W =                     executes wlogout
-mainMod + Print =                 takes fullscreen screenshot
-mainMod + Shift + Print =         takes regional screen shot
+mainMod + P =                     takes fullscreen screenshot
+mainMod + Shift + P =             takes regional screen shot
 
 ```
 
