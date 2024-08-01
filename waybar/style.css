@@ -1,68 +1,129 @@
 * {
-  font-family: "Fira Code";
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+#waybar {
+  background: #1e222a;
+  /* background: rgba(0, 0, 0, 0); */
+  color: #eeeeef;
+  font-size: 14px;
+  font-family: "Hack Nerd Font";
 }
 
-#waybar {
-  background: #171717;
-  color: #fff;
+#workspaces button {
+  padding: 0 5px;
+  color: #eeeeef;
+}
+/* Fix: active workspace doesn't show up */
+/* #workspaces button.focused { */
+#workspaces button.active {
+  color: #0FA4AF;
+}
+
+#custom-powermenu,
+#battery,
+#cpu,
+#temperature,
+#memory,
+#workspaces,
+#clock,
+#window,
+#pulseaudio,
+#custom-updates,
+#network {
+  padding: 4px 8px;
+  background-color: #303643;
+  border-radius: 30px;
+  margin: 6px 4px;
+}
+
+#window {
+  color: #929db1;
+}
+
+#tray {
+  margin-left: 4px;
+}
+
+#custom-updates {
+  color: #1788e4;
+}
+
+#custom-powermenu {
+  color: #e06c75;
+  padding-right: 11px;
+  margin-right: 8px;
+}
+
+#scratchpad {
+  color: #cffafe;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+#pulseaudio {
+  color: #0fb9b1;
+  padding-right: 14px;
+}
+
+#cpu {
+  color: #e64bd9;
+}
+
+#temperature {
+  color: #98c379;
+}
+
+#memory {
+  color: #e5c07b;
+}
+
+#network {
+  color: #c678dd;
+  min-width: 120px;
+}
+
+#battery {
+  /* background-color: #ffffff; */
+  color: #61afef;
+}
+
+#battery.charging, #battery.plugged {
+  color: #ffffff;
+  background-color: #26A65B;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+/* using steps() instead of linear as a timing function to limit cpu usage */
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #clock {
   color: #fff;
+  margin-left: 8px;
+  /* opacity: 0.7; */
+  /* font-size: 18px; */
 }
 
-#tray {
-  padding-left: 4px;
-}
-
-#workspaces button:hover {
-  background-color: transparent;
-}
-
-#workspaces button {
-  color: #737373;
-  padding-left: 4px;
-  padding-right: 4px;
-  border-radius: 0px;
-}
-
-#workspaces button:hover {
-  background-color: #262626;
-}
-
-#workspaces button.active {
-  color: #84cc16;
-}
-
-#window {
-  color: #fff;
-}
-
-#network {
-  color: #3b82f6;
-  margin-right: 8px;
-}
-
-#pulseaudio {
-  color: #14b8a6;
+#custom-archicon {
+  color: #1793d1;
+  margin-left: 8px; 
   margin-right: 4px;
-}
-
-#cpu {
-  color: #0ea5e9;
-  margin-right: 4px;
-}
-
-#temperature {
-  color: #eab308;
-  margin-right: 4px;
-}
-
-#memory {
-  color: #d946ef;
-  margin-right: 4px;
-}
-
-#custom-powermenu {
-  color: #f43f5e;
 }
