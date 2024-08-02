@@ -32,7 +32,7 @@ mainMod + Shift + P =             takes regional screen shot
 
 #### Hyprpaper:
 
-> ![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/1st/assets/hyprpaper.png)
+![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/1st/assets/hyprpaper.png)
 
 #### Window Tabs:
 
