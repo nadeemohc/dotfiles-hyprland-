@@ -32,20 +32,20 @@ mainMod + Shift + P =             takes regional screen shot
 
 #### Hyprpaper:
 
-> ![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/main/assets/hyprpaper.png)
+> ![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/1st/assets/hyprpaper.png)
 
 #### Window Tabs:
 
-![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/main/assets/main.png)
+![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/1st/assets/main.png)
 
 #### Rofi:
 
-![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/main/assets/rofi.png)
+![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/1st/assets/rofi.png)
 
 #### Wlogout:
 
-![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/main/assets/wlogout.png)
+![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/1st/assets/wlogout.png)
 
 #### Sleep/Suspend:
 
-![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/main/assets/lock.png)
+![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/1st/assets/lock.png)
