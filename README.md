@@ -39,9 +39,9 @@ mainMod + Shift + P =             takes regional screen shot
 
 ![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/2nd/assets/main.png)
 
-#### Rofi:
+#### Wofi:
 
-![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/2nd/assets/rofi.png)
+![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/2nd/assets/wofi.png)
 
 #### Wlogout:
 
