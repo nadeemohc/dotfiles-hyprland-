@@ -1,3 +1,4 @@
+/* Base styles */
 * {
   border: none;
   border-radius: 0;
@@ -5,24 +6,25 @@
   margin: 0;
   padding: 0;
 }
+
 #waybar {
-  background: #1e222a;
-  /* background: rgba(0, 0, 0, 0); */
+  background: rgba(0, 0, 0, 0.2);
   color: #eeeeef;
   font-size: 14px;
   font-family: "Hack Nerd Font";
 }
 
+/* Workspace styles */
 #workspaces button {
   padding: 0 5px;
   color: #eeeeef;
 }
-/* Fix: active workspace doesn't show up */
-/* #workspaces button.focused { */
+
 #workspaces button.active {
   color: #0FA4AF;
 }
 
+/* Module styles */
 #custom-powermenu,
 #battery,
 #cpu,
@@ -33,21 +35,25 @@
 #window,
 #pulseaudio,
 #custom-updates,
-#network {
+#network,
+#power-profiles-daemon {
   padding: 4px 8px;
   background-color: #303643;
   border-radius: 30px;
   margin: 6px 4px;
 }
 
+/* Window styles */
 #window {
   color: #929db1;
 }
 
+/* Tray styles */
 #tray {
   margin-left: 4px;
 }
 
+/* Custom module colors */
 #custom-updates {
   color: #1788e4;
 }
@@ -56,12 +62,6 @@
   color: #e06c75;
   padding-right: 11px;
   margin-right: 8px;
-}
-
-#scratchpad {
-  color: #cffafe;
-  padding-right: 4px;
-  padding-left: 4px;
 }
 
 #pulseaudio {
@@ -87,15 +87,33 @@
 }
 
 #battery {
-  /* background-color: #ffffff; */
   color: #61afef;
 }
 
-#battery.charging, #battery.plugged {
+#battery.charging, 
+#battery.plugged {
   color: #ffffff;
   background-color: #26A65B;
 }
 
+/* Power profiles daemon styles */
+#power-profiles-daemon {
+  color: #61afef;
+}
+
+#power-profiles-daemon.balanced {
+  color: #d19a66;
+}
+
+#power-profiles-daemon.performance {
+  color: #e06c75;
+}
+
+#power-profiles-daemon.power-saver {
+  color: #98c379;
+}
+
+/* Battery critical animation */
 @keyframes blink {
   to {
     background-color: #ffffff;
@@ -103,10 +121,8 @@
   }
 }
 
-/* using steps() instead of linear as a timing function to limit cpu usage */
-
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
+  background-color: #ff0000;
   color: #ffffff;
   animation-name: blink;
   animation-duration: 0.5s;
@@ -115,13 +131,13 @@
   animation-direction: alternate;
 }
 
+/* Clock styles */
 #clock {
   color: #fff;
   margin-left: 8px;
-  /* opacity: 0.7; */
-  /* font-size: 18px; */
 }
 
+/* Arch icon */
 #custom-archicon {
   color: #1793d1;
   margin-left: 8px; 

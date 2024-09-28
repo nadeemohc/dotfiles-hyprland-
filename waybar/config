@@ -11,7 +11,7 @@
         "custom/cava"
     ],
     "modules-center": [
-        "hyprland/window",
+        "hyprland/window"
     ],
     "modules-right": [
         "network",
@@ -20,6 +20,7 @@
         "cpu",
         "pulseaudio",
         "battery",
+        "power-profiles-daemon",  // Added here
         "custom/powermenu"
     ],
     "tray": {
@@ -95,8 +96,8 @@
         "bar_delimiter": 0,
         "noise_reduction": 0.77,
         "input_delay": 2,
-            "hide_on_silence": true,
-        "format": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "hide_on_silence": true,
+        "format": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
         "actions": {
             "on-click-right": "mode"
         }
@@ -124,16 +125,27 @@
         "on-click": "pavucontrol"
     },
     "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "interval": 1,
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-full": "{capacity}% ",
-        "format-icons": [" ", " ", " ", " ", " "]
+      "states": {
+        "good": 95,
+        "warning": 30,
+        "critical": 15
+      },
+      "interval": 1,
+      "format": "{capacity}% {icon}",
+      "format-charging": "{capacity}% ",
+      "format-full": "{capacity}% ",
+      "format-icons": [" ", " ", " ", " ", " "]
+    },
+    "power-profiles-daemon": {
+      "format": "{icon} ",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": " ",
+        "performance": "",
+        "balanced": " ",
+        "power-saver": ""
+      }
     },
     "clock": {
         "format": "{:%H:%M}",
