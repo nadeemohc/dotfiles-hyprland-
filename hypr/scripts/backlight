@@ -1,0 +1,25 @@
+#!/bin/bash
+
+brightness_step=5
+bar_color="#7f7fff"
+device="amdgpu_bl1"  # Change if needed (use `brightnessctl -l` to list)
+
+function get_brightness {
+    brightnessctl -d "$device" | grep -Po '\d+(?=%)' | head -1
+}
+
+function show_brightness_notif {
+    local brightness=$(get_brightness)
+    dunstify -a "brightness" -r 91192 -u normal -t 1200 -h int:value:"$brightness" -h string:hlcolor:"$bar_color" "  $brightness%"
+}
+
+case "$1" in
+    up)
+        brightnessctl -d "$device" set +${brightness_step}%
+        show_brightness_notif
+        ;;
+    down)
+        brightnessctl -d "$device" set ${brightness_step}%-
+        show_brightness_notif
+        ;;
+esac

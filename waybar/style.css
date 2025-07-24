@@ -1,145 +1,246 @@
-/* Base styles */
 * {
   border: none;
-  border-radius: 0;
   min-height: 0;
-  margin: 0;
-  padding: 0;
+  /* margin-top: 3px; */
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 12px;
 }
 
-#waybar {
-  background: rgba(0, 0, 0, 0.2);
-  color: #eeeeef;
-  font-size: 14px;
-  font-family: "Hack Nerd Font";
+.modules-right {
+  background-color: #1e1e2e;
+  /* background-color: var(--background-color); */
+  margin: 2px 10px 0 0;
+  margin-right: 10px;
+  border-radius: 12px;
 }
 
-/* Workspace styles */
+.modules-center {
+  /* background-color: #1e1e2e; */
+  background-color: transparent;
+  margin: 2px 10px 0 0;
+  border-radius: 12px;
+}
+
+.modules-left {
+  background-color: transparent;
+  margin: 2px 50px 0 0;
+  margin-left: 10px;
+  border-radius: 12px;
+}
+
+window#waybar {
+  /* background-color: #1e1e2e; */
+  /* transition-property: background-color; */
+  /* transition-duration: 0.5s; */
+  background-color: transparent;
+}
+
+window#waybar.hidden {
+  opacity: 0;
+}
+mpris#waybar.hidden {
+  opacity: 0;
+}
+
+#workspaces {
+  background-color: transparent;
+}
+
+#window {
+  background-color: #1e1e2e;
+  font-size: 12px;
+  color: #cdd6f4;
+  padding: 0px 15px;
+  font-weight: 900;
+  margin: 2px 10px 0 0;
+  border-radius: 12px;
+}
+
 #workspaces button {
-  padding: 0 5px;
-  color: #eeeeef;
+  all: initial;
+  /* Remove GTK theme values (waybar #1351) */
+  min-width: 0;
+  /* Fix weird spacing in materia (waybar #450) */
+  box-shadow: inset 0 -3px transparent;
+  /* Use box-shadow instead of border so the text isn't offset */
+  padding: 2px 10px;
+  margin: 6px 3px;
+  border-radius: 4px;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
 }
 
 #workspaces button.active {
-  color: #0FA4AF;
+  color: #1e1e2e;
+  background-color: #cdd6f4;
 }
 
-/* Module styles */
-#custom-powermenu,
-#battery,
-#cpu,
-#temperature,
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  color: #1e1e2e;
+  background-color: #cdd6f4;
+}
+
+#custom-separator {
+  color: #1b5e20;
+  margin: 0 5px;
+}
+
+#workspaces button.urgent {
+  background-color: #f38ba8;
+}
+
 #memory,
-#workspaces,
-#clock,
-#window,
+#custom-todos,
+#battery,
+#backlight,
 #pulseaudio,
-#custom-updates,
 #network,
-#power-profiles-daemon {
-  padding: 4px 8px;
-  background-color: #303643;
-  border-radius: 30px;
-  margin: 6px 4px;
-}
-
-/* Window styles */
-#window {
-  color: #929db1;
-}
-
-/* Tray styles */
+#clock,
+#cpu,
+#disk,
+#temperature,
 #tray {
-  margin-left: 4px;
+  min-height: 10px;
+  border-radius: 4px;
+  margin: 4px 3px;
+  padding: 1px 12px;
+  font-weight: 700;
+  /* background-color: #1e1e2e; */
+  /* color: #181825; */
 }
 
-/* Custom module colors */
-#custom-updates {
-  color: #1788e4;
+cava {
+  color: #f2cdcd;
 }
 
-#custom-powermenu {
-  color: #e06c75;
-  padding-right: 11px;
-  margin-right: 8px;
+#clock.calender {
+  color: #f2cdcd;
 }
 
-#pulseaudio {
-  color: #0fb9b1;
-  padding-right: 14px;
+#custom-todos {
+  color: #f9e2af;
 }
 
-#cpu {
-  color: #e64bd9;
+#disk {
+  color: #94e2d5;
 }
 
-#temperature {
-  color: #98c379;
+#mpris {
+  color: #c604f7;
+  /* background-color: #2c313c; */
+  padding-right: 16px;
+  padding-left: 16px;
+  border-radius: 10px;
+  font-weight: 900;
+
+  background-color: #1e1e2e;
+  padding: 0px 15px;
+  font-weight: 900;
+  margin: 2px 10px 0 0;
+  border-radius: 12px;
 }
 
 #memory {
-  color: #e5c07b;
-}
-
-#network {
-  color: #c678dd;
-  min-width: 120px;
+  color: #fab387;
 }
 
 #battery {
-  color: #61afef;
+  color: #f9e2af;
 }
 
-#battery.charging, 
-#battery.plugged {
-  color: #ffffff;
-  background-color: #26A65B;
+#pulseaudio {
+  color: #f38ba8;
 }
 
-/* Power profiles daemon styles */
-#power-profiles-daemon {
-  color: #61afef;
+#cpu {
+  color: #f38ba8;
 }
 
-#power-profiles-daemon.balanced {
-  color: #d19a66;
+#temperature {
+  color: #02ff63;
 }
 
-#power-profiles-daemon.performance {
-  color: #e06c75;
-}
-
-#power-profiles-daemon.power-saver {
-  color: #98c379;
-}
-
-/* Battery critical animation */
 @keyframes blink {
   to {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #f38ba8;
+    color: #181825;
   }
 }
 
-#battery.critical:not(.charging) {
-  background-color: #ff0000;
-  color: #ffffff;
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+  background-color: #ff0048;
+  color: #181825;
   animation-name: blink;
   animation-duration: 0.5s;
-  animation-timing-function: steps(12);
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
 
-/* Clock styles */
-#clock {
-  color: #fff;
-  margin-left: 8px;
+#battery.charging {
+  color: #a6e3a1;
+  background-color: #1e1e2e;
+  animation: none;
 }
 
-/* Arch icon */
-#custom-archicon {
-  color: #1793d1;
-  margin-left: 8px; 
-  margin-right: 4px;
+#backlight {
+  background-color: #1e1e2e;
+  color: #cba6f7;
+  padding-right: 17px;
+}
+
+#network {
+  color: #94e2d5;
+  padding-right: 17px;
+}
+
+#clock {
+  font-family: JetBrainsMono Nerd Font;
+  color: #cba6f7;
+}
+
+#custom-power {
+  color: #f2cdcd;
+}
+
+tooltip {
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #131822;
+}
+
+tooltip label {
+  padding: 5px;
+  background-color: #131822;
+}
+
+#cpu,
+#disk,
+#memory,
+#temperature {
+  background-color: #1e1e2e;
+  margin: 0px;
+  border-radius: 0px;
+}
+
+#disk {
+  border-radius: 12px 0px 0px 12px;
+  margin-left: 40px;
+}
+
+/* #memory {
+  border-radius: 0px 0px 0px 0px;
+} */
+
+#temperature {
+  border-radius: 0px 12px 12px 0px;
+}
+
+.modules-left > widget:first-child {
+  background-color: #131822;
+  border-radius: 8px;
 }

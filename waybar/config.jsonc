@@ -1,0 +1,201 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 0,
+    "height": 10,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "disk",
+        "cpu",
+        "memory",
+        "temperature"
+    ],
+    "modules-center": [
+        "hyprland/window",
+        "mpris"
+    ],
+    "modules-right": [
+        "network",
+        "backlight",
+        "pulseaudio",
+        "battery",
+        "custom/power",
+        "clock#calender",
+        "clock"
+    ],
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}  {percent}%",
+        "format-icons": [""],
+        "on-click": "brightnessctl set 20%+",
+        "on-click-right": "brightnessctl set 20%-"
+    },
+
+   "custom/separator": {
+        "format": "",
+        "interval": "once",
+        "tooltip": false
+    },
+
+    "mpris": {
+        "format": "{status_icon} {title} - {artist}",
+        "format-paused": "{status_icon} {title}",
+        "max-length": 30,
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "playing": "⏸",
+            "paused": "▶"
+        }
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": false,
+        "icon": true,
+        "icon-size": 16,
+        "max-length": 40
+    },
+
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "on-scroll-up": "~/.config/waybar/scripts/scroll_workspace.sh up",
+        "on-scroll-down": "~/.config/waybar/scripts/scroll_workspace.sh down",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "urgent": "󱓻"
+        },
+        "persistent_workspaces": {}
+    },
+
+    "temperature": {
+        "format": "{icon} {temperatureC}°C",
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format-icons": ["", "", ""]
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": " {percentage_used}%",
+        "path": "/",
+        "tooltip-format": "{used} / {total}"
+    },
+
+    "cpu": {
+        "interval": 2,
+        "format": " {}%",
+        "max-length": 10
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": " {used} GB",
+        "max-length": 10
+    },
+
+    "clock#calender": {
+        "format": "  {:%B %d, %A}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            // "weeks-pos"     : "",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#99ff11'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "tz_up",
+            "on-scroll-down": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "clock": {
+        "format": "  {:%I:%M %p}",
+        "interval": 60,
+        "tooltip": true,
+        "tooltip-format": "{:%d %B %H:%M}"
+    },
+
+    "network": {
+        "interface": "wlan0",
+        "format": "{ifname}",
+        "format-wifi": "  {essid}",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "󰂰",
+        "nospacing": 1,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "max-volume": 200,
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": " ",
+            "default": [
+                " ",
+                "󰕾 ",
+                "󰕾 ",
+                "  "
+            ]
+        },
+        "scroll-step": 1
+    },
+
+    "battery": {
+        "format": "{icon}{capacity}% ({power})",
+        "format-icons": {
+            "charging": [
+                " "
+            ],
+            "default": [
+                "󰁺 ",
+                "󰁻 ",
+                "󰁼 ",
+                "󰁽 ",
+                "󰁾 ",
+                "󰁿 ",
+                "󰂀 ",
+                "󰂁 ",
+                "󰂂 ",
+                "󱟢 "
+            ]
+        },
+        "interval": 2,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "tooltip": true
+    }
+}

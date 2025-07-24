@@ -1,0 +1,53 @@
+#!/bin/bash
+
+volume_step=5
+max_volume=150
+bar_color="#7f7fff"
+
+function get_volume {
+    pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '[0-9]{1,3}(?=%)' | head -1
+}
+
+function get_mute {
+    pactl get-sink-mute @DEFAULT_SINK@ | grep -Po '(?<=Mute: )(yes|no)'
+}
+
+function get_volume_icon {
+    local vol=$1
+    local muted=$2
+    if [[ "$vol" -eq 0 || "$muted" == "yes" ]]; then
+        echo ""  # Muted
+    elif [[ "$vol" -lt 50 ]]; then
+        echo ""  # Low
+    else
+        echo ""  # High
+    fi
+}
+
+function show_volume_notif {
+    local volume=$(get_volume)
+    local muted=$(get_mute)
+    local icon=$(get_volume_icon "$volume" "$muted")
+    dunstify -a "volume" -r 91191 -u normal -t 1200 -h int:value:"$volume" -h string:hlcolor:"$bar_color" "$icon  $volume%"
+}
+
+case "$1" in
+    up)
+        pactl set-sink-mute @DEFAULT_SINK@ 0
+        volume=$(get_volume)
+        if (( volume + volume_step > max_volume )); then
+            pactl set-sink-volume @DEFAULT_SINK@ "$max_volume%"
+        else
+            pactl set-sink-volume @DEFAULT_SINK@ +${volume_step}%
+        fi
+        show_volume_notif
+        ;;
+    down)
+        pactl set-sink-volume @DEFAULT_SINK@ -${volume_step}%
+        show_volume_notif
+        ;;
+    mute)
+        pactl set-sink-mute @DEFAULT_SINK@ toggle
+        show_volume_notif
+        ;;
+esac
