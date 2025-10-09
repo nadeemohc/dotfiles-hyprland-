@@ -23,7 +23,7 @@ mainMod + D =                     opens wofi
 mainMod + W =                     opens firefox
 mainMod + L =                     locks the screen (uses Hyprlock)
 mainMod + Q =                     kills the current window
-mainMod + Shift + E =                     executes wlogout
+mainMod + Shift + E =             executes wlogout
 mainMod + P =                     takes fullscreen screenshot
 mainMod + Shift + P =             takes regional screen shot
 
@@ -42,19 +42,19 @@ Go check out his work!
 
 #### Hyprpaper:
 
-![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/2nd/assets/hyprpaper.png)
+![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/3rd/assets/hyprpaper.png)
 
 #### Window Tabs:
 
-![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/2nd/assets/main.png)
+![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/3rd/assets/main.png)
 
 #### Wofi:
 
-![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/2nd/assets/wofi.png)
+![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/3rd/assets/wofi.png)
 
 #### Wlogout:
 
-![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/2nd/assets/wlogout.png)
+![screenshot](https://github.com/nadeemohc/dotfiles-hyprland-/blob/3rd/assets/wlogout.png)
 
 <!-- #### Sleep/Suspend:
 
