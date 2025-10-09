@@ -3,7 +3,7 @@
 > Installation
 
 ```
-git clone --branch 2nd --single-branch https://github.com/nadeemohc/dotfiles-hyprland-.git
+git clone --branch 3rd --single-branch https://github.com/nadeemohc/dotfiles-hyprland-.git
 
 cp -r dotfiles-hyprland/* ~/.config/
 ```
@@ -20,10 +20,10 @@ cp -r dotfiles-hyprland/* ~/.config/
 
 ```
 mainMod + D =                     opens wofi
-mainMod + B =                     opens firefox
+mainMod + W =                     opens firefox
 mainMod + L =                     locks the screen (uses Hyprlock)
-mainMod + K =                     kills the current window
-mainMod + W =                     executes wlogout
+mainMod + Q =                     kills the current window
+mainMod + Shift + E =                     executes wlogout
 mainMod + P =                     takes fullscreen screenshot
 mainMod + Shift + P =             takes regional screen shot
 

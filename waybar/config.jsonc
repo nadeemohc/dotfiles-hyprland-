@@ -23,6 +23,7 @@
         "custom/power",
         "clock#calender",
         "clock"
+        /*"tray"*/
     ],
 
     "backlight": {
@@ -150,7 +151,8 @@
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format-ethernet": "{ifname} ",
         "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50
+        "max-length": 50,
+        "on-click": "nm-connection-editor"
     },
 
     "pulseaudio": {
@@ -172,8 +174,14 @@
         "scroll-step": 1
     },
 
+    /*"tray":{
+        "icon-size": 16,
+        "spacing": 10
+    },*/
+  
     "battery": {
-        "format": "{icon}{capacity}% ({power})",
+        "format": "{icon}{capacity}%",
+        // "format": "{icon}{capacity}% ({power})",
         "format-icons": {
             "charging": [
                 " "
