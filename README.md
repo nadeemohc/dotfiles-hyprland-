@@ -32,7 +32,7 @@ mainMod + Shift + P =             takes regional screen shot
 
 ### 💙 Credits
 
-Huge thanks to **[harisanker10](https://github.com/harisanker10)** for the Waybar configuration —  
+Huge thanks to **[harisanker](https://github.com/harisanker10)** for the Waybar configuration —  
 inspired and adapted from his [dotfiles](https://github.com/harisanker10/dotfiles) repository.  
 Go check out his work!
 
